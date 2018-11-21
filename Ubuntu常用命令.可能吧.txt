@@ -1,0 +1,56 @@
+1.换源
+阿里源官网：https://opsx.alibaba.com/mirror
+找到Ubuntu点击右边的帮助，按照提示拷贝到里面。
+然后
+	sudo apt-get update 更新源
+	sudo apt-get upgrade 升级软件
+	sudo apt-get install xxxxx 安装软件
+	sudo apt-get install -f 修复，一般可能修复不了
+	sudo apt-get remove xxxxx 卸载软件。没成功安装的软件就要卸载掉。
+	
+2. 安装deb软件包
+	sudo dpkg -i XXXXXXXXXXXXXXXXX.deb 别听别人的双击安装包就能安装，
+		缺少依赖的时候，狗屁都看不见。
+		
+3.终端 快捷键
+	召唤终端Ctrl+Alt+T
+	加一个标签页Ctrl+Shitf+T
+	切换Alt+1 [2 3...]
+	复制Ctrl+Shift+C
+	粘贴Ctrl+Shift+T
+	结束啥啥啥的Ctrl+C还有个Ctrl+D，忘了。
+
+3.Ubuntu好像没有自带vim要手动安装
+	sudo apt-get install vim
+	vim教程，`vimtutor`,中文系统显示的是中文版。
+	
+4.Ubuntu自带的文本编辑器gedit
+5.Linux下写代码，VSCode atom 或 sublime-text，VSCode方便。官网上就可以下载。
+
+剩下的基本命令，ls,cd,pwd,rm,mkdir,touch,mv,cp,ln,tar,gzip,gunzip,chmod,chown差不多先这些吧。
+
+如果喜欢玩，可以装个shell主题oh-my-zsh（配置烦杂，懒得介绍），
+终端我喜欢用Terminator
+
+编程IDE：
+	Python：spyder `python3 -m pip install sypder`不行就加个sudo
+	还不行，那就用pycharm。
+	C++：写小东西还是可以用codeblock的，
+	安装教程：https://www.jianshu.com/p/f0802227e64a
+	记得安装插件，和配置默认终端（XTerm就是屎）。
+
+	有个东西叫umake，可以安装许多ide：
+	sudo add-apt-repository ppa:lyzardking/ubuntu-make
+	sudo apt-get install ubuntu-make
+
+ubuntu自带python2和Python3，默认是Python2
+想要自由切换需要学一下update-alternative命令
+首先要安装软链接
+sudo update-alternative --install '软链接' 名字 '真实路径（其实也是个软链接）' 优先级
+sudo update-alternative --install '/usr/bin/python' python '/usr/bin/python2' 10
+sudo update-alternative --install '/usr/bin/python' python '/usr/bin/python3' 20
+
+然后配置默认选项
+sudo update-alternative --config python
+然后选数字
+
